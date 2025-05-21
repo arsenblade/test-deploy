@@ -1,0 +1,26 @@
+/.phpunit.cache
+/public/storage
+/public/hot
+public/build
+/public/sitemap_*
+/public/feeds/
+/storage/*.key
+/vendor
+.env
+.phpunit.result.cache
+.php-cs-fixer.cache
+/.fleet
+/.idea
+/.vscode
+.env.backup
+.env.testing
+.env.production
+/tmp
+/temp
+
+# NPM
+.yarn/cache
+.yarn/install-state.gz
+npm-debug.log
+yarn-error.log
+node_modules
