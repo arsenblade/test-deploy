@@ -1,0 +1,19 @@
+name: Trigger Deploy
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  call-deploy:
+    name: Trigger deploy in hello-world-deploy
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Call workflow in deploy repo
+        uses: peter-evans/repository-dispatch@v3
+        with:
+          token: ${{ secrets.REPO_ACCESS_TOKEN }}
+          repository: your-username/hello-world-deploy
+          event-type: deploy
+          client-payload: '{"image_tag": "${{ github.event.release.tag_name }}"}'
